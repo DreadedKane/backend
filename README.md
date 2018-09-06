@@ -6,13 +6,9 @@ Unity package for backend communication.
 * Login.
 
 ## Requirements
+* [PlayFab](https://api.playfab.com/sdks/unity)
 * [Core](https://github.com/DreadedKane/core)
-
-### Android
-* [Oculus Integration](https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022)
-
-### Windows
-* [Steamworks.NET](https://steamworks.github.io)
+* [Platform](https://github.com/DreadedKane/platform)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit)
