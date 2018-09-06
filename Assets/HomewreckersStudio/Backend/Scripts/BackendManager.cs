@@ -7,7 +7,7 @@ using System;
 
 namespace HomewreckersStudio
 {
-    public sealed partial class LoginManager : Request
+    public sealed partial class BackendManager : Request
     {
         /**
          * Starts the login process.
