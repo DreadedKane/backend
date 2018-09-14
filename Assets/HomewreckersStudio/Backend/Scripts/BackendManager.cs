@@ -7,14 +7,30 @@ using System;
 
 namespace HomewreckersStudio
 {
-    public sealed partial class BackendManager : Request
+    /**
+     * Manages logging in.
+     */
+    public sealed partial class BackendManager : Singleton<BackendManager>
     {
+        /** Used to invoke callbacks. */
+        private Request m_request;
+
+        /**
+         * Creates the request object.
+         */
+        protected override void Awake()
+        {
+            base.Awake();
+
+            m_request = new Request();
+        }
+
         /**
          * Starts the login process.
          */
         public void Login(Action success, Action failure)
         {
-            SetEvents(success, failure);
+            m_request.SetListeners(success, failure);
 
             LoginPartial();
         }

@@ -7,16 +7,11 @@ using UnityEngine;
 
 namespace HomewreckersStudio
 {
+    /**
+     * Performs unit tests on the module.
+     */
     public sealed class BackendTests : MonoBehaviour
     {
-        /** Used to initialize the platform. */
-        [SerializeField]
-        private PlatformManager m_platformManager;
-
-        /** Used to login. */
-        [SerializeField]
-        private BackendManager m_backendManager;
-
         /**
          * Runs the unit tests.
          */
@@ -42,7 +37,7 @@ namespace HomewreckersStudio
         {
             Debug.Log("Testing login");
 
-            m_platformManager.Initialize(OnPlatformSuccess, Finish);
+            PlatformManager.Instance.Initialise(OnPlatformSuccess, Finish);
         }
 
         /**
@@ -50,7 +45,7 @@ namespace HomewreckersStudio
          */
         private void OnPlatformSuccess()
         {
-            m_backendManager.Login(Finish, Finish);
+            BackendManager.Instance.Login(Finish, Finish);
         }
     }
 }

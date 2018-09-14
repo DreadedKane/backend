@@ -11,14 +11,11 @@ using UnityEngine;
 
 namespace HomewreckersStudio
 {
+    /**
+     * Implements Android-specific part.
+     */
     public sealed partial class BackendManager
     {
-        /**
-         * Used to get the username.
-         */
-        [SerializeField]
-        private PlatformManager m_platformManager;
-
         /**
          * Logs in with custom ID.
          */
@@ -28,7 +25,7 @@ namespace HomewreckersStudio
 
             LoginWithCustomIDRequest request = new LoginWithCustomIDRequest
             {
-                CustomId = m_platformManager.User.Name,
+                CustomId = PlatformManager.Instance.User.Name,
                 CreateAccount = true
             };
 
@@ -42,7 +39,7 @@ namespace HomewreckersStudio
         {
             Debug.Log("Login succeeded");
 
-            OnSuccess();
+            m_request.OnSuccess();
         }
 
         /**
@@ -54,7 +51,7 @@ namespace HomewreckersStudio
 
             Debug.Log("Login failed: " + message);
 
-            OnFailure();
+            m_request.OnFailure();
         }
     }
 }

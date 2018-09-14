@@ -11,12 +11,11 @@ using UnityEngine;
 
 namespace HomewreckersStudio
 {
+    /**
+     * Implements Windows-specific part.
+     */
     public sealed partial class BackendManager
     {
-        /** Used to get the session ticket. */
-        [SerializeField]
-        private PlatformManager m_platformManager;
-
         /**
          * Logs in with Steam.
          */
@@ -26,7 +25,7 @@ namespace HomewreckersStudio
 
             LoginWithSteamRequest request = new LoginWithSteamRequest
             {
-                SteamTicket = m_platformManager.Entitlements.SessionTicket,
+                SteamTicket = PlatformManager.Instance.Entitlements.SessionTicket,
                 CreateAccount = true
             };
 
@@ -40,7 +39,7 @@ namespace HomewreckersStudio
         {
             Debug.Log("Login succeeded");
 
-            OnSuccess();
+            m_request.OnSuccess();
         }
 
         /**
@@ -52,7 +51,7 @@ namespace HomewreckersStudio
 
             Debug.LogError("Login failed: " + message);
 
-            OnFailure();
+            m_request.OnFailure();
         }
     }
 }
