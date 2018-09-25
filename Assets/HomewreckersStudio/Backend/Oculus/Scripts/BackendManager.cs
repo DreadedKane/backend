@@ -9,7 +9,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 
-namespace HomewreckersStudio
+namespace Homewreckers.Backend
 {
     /**
      * Implements Android-specific part.
@@ -25,7 +25,7 @@ namespace HomewreckersStudio
 
             LoginWithCustomIDRequest request = new LoginWithCustomIDRequest
             {
-                CustomId = PlatformManager.Instance.User.Name,
+                CustomId = HomewreckersStudio.PlatformManager.Instance.User.Name,
                 CreateAccount = true
             };
 
@@ -33,7 +33,7 @@ namespace HomewreckersStudio
         }
 
         /**
-         * Calls the success method.
+         * Calls success.
          */
         private void OnLoginSuccess(LoginResult result)
         {
@@ -43,13 +43,13 @@ namespace HomewreckersStudio
         }
 
         /**
-         * Calls the failure method.
+         * Logs an error and calls failure.
          */
         private void OnLoginFailure(PlayFabError error)
         {
             string message = error.GenerateErrorReport();
 
-            Debug.Log("Login failed: " + message);
+            Debug.LogError("Login failed: " + message);
 
             m_request.OnFailure();
         }

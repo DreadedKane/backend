@@ -140,8 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 190bbb04bf437ef4ab1983d40f3d98c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_platformManager: {fileID: 1588254177}
-  m_backendManager: {fileID: 1110470779}
+  m_leaderboardNames: []
 --- !u!4 &582535262
 Transform:
   m_ObjectHideFlags: 0
@@ -182,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8deda3ac0a8f96441b7066b5d72620d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_platformManager: {fileID: 1588254177}
+  m_maxLeaderboardEntries: 5
 --- !u!4 &1110470780
 Transform:
   m_ObjectHideFlags: 0

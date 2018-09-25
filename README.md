@@ -4,6 +4,8 @@ Unity package for backend communication.
 
 ## Features
 * Login.
+* Get user data.
+* Get leaderboard data.
 
 ## Requirements
 * [PlayFab](https://api.playfab.com/sdks/unity)

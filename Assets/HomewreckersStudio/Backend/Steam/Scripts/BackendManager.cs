@@ -9,7 +9,7 @@ using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
 
-namespace HomewreckersStudio
+namespace Homewreckers.Backend
 {
     /**
      * Implements Windows-specific part.
@@ -25,7 +25,7 @@ namespace HomewreckersStudio
 
             LoginWithSteamRequest request = new LoginWithSteamRequest
             {
-                SteamTicket = PlatformManager.Instance.Entitlements.SessionTicket,
+                SteamTicket = HomewreckersStudio.PlatformManager.Instance.Entitlements.SessionTicket,
                 CreateAccount = true
             };
 
@@ -33,7 +33,7 @@ namespace HomewreckersStudio
         }
 
         /**
-         * Calls the success method.
+         * Calls success.
          */
         private void OnLoginSuccess(LoginResult result)
         {
@@ -43,7 +43,7 @@ namespace HomewreckersStudio
         }
 
         /**
-         * Calls the failure method.
+         * Logs an error and calls failure.
          */
         private void OnLoginFailure(PlayFabError error)
         {
